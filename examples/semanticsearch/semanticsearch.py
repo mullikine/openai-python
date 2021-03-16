@@ -113,10 +113,10 @@ def main():
             query=args.query, documents=args.document
         )
         resp = resp.to_dict_recursive()
-        print(f"[server-side semantic search] {resp}")
+        print(f"{resp}")
     else:
         resp = semantic_search(args.engine, query=args.query, documents=args.document)
-        print(f"[client-side semantic search] {resp}")
+        print(f"{resp}")
 
     return 0
 
