@@ -117,7 +117,7 @@ def main():
     else:
         resp = semantic_search(args.engine, query=args.query, documents=args.document)
 
-    resp = json.dums(resp)
+    resp = json.dumps(resp)
     print(f"{resp}")
 
     return 0
