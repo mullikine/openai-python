@@ -4,6 +4,7 @@ import argparse
 import logging
 import sys
 from typing import List
+import json
 
 logger = logging.getLogger()
 formatter = logging.Formatter("[%(asctime)s] [%(process)d] %(message)s")
@@ -113,10 +114,11 @@ def main():
             query=args.query, documents=args.document
         )
         resp = resp.to_dict_recursive()
-        print(f"{resp}")
     else:
         resp = semantic_search(args.engine, query=args.query, documents=args.document)
-        print(f"{resp}")
+
+    resp = json.dums(resp)
+    print(f"{resp}")
 
     return 0
 
